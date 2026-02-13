@@ -4,7 +4,11 @@ let isLoggedIn = true;
 let userMessage;
 let userType = "subscriber";
 let userCategory;
+let isAuthenticated = true;
 
+
+
+// -------------- Step 2 -----------------------
 if (userRole === "admin") {
     accessLevel = "Full access granted";
 } else if (userRole === "manager") {
@@ -15,6 +19,7 @@ if (userRole === "admin") {
 
 console.log("Access level:",accessLevel);
 
+// -------------- Step 3 -----------------------
 if (isLoggedIn) {
     if (userRole === "admin"){
         userMessage = "welcome,Admin!";
@@ -28,17 +33,23 @@ if (isLoggedIn) {
 console.log("User Message:", userMessage);
 
 
+// -------------- Step 4 -----------------------
 switch (userType) {
     case "admin":
         userCategory = "Adminstrator";
         break;
-    case "manager":
-        userCategory = "Manager";
-        break;
-    case "subscriber":
-        userCategory = "Subscriber";
-        break
-    default:
-        userCategory = "Unknown";
-}
-console.log("User Category:", userCategory);
+        case "manager":
+            userCategory = "Manager";
+            break;
+            case "subscriber":
+                userCategory = "Subscriber";
+                break
+                default:
+                    userCategory = "Unknown";
+                }
+                console.log("User Category:", userCategory);
+
+// -------------- Step 5 -----------------------
+let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authennticated";
+
+console.log("Authentication Status:",authenticationStatus)
